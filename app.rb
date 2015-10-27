@@ -9,15 +9,13 @@ require_relative 'lib/formatter'
 helpers do
   # parse a text area.  We want an array of IDs coming out.
   # Do the right thing for newline or comma separated values.
-  def parse(t)
-    t.split(/[,\n]/).map(&:strip).select{ |x| !x.empty? }
+  def parse(inputtext)
+    inputtext.split(/[,\n]/).map(&:strip).reject(&:empty?)
   end
 
   # format a list of tuples
   def oformat(ids)
-    out = ""
-    ids.each{ |i| out += "#{i[0]} : #{i[1]}\n"}
-    return out
+    ids.inject(""){ |out, idpair| out += "#{idpair[0]} : #{idpair[1]}\n"}
   end
 
 end
