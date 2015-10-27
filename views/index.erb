@@ -1,12 +1,14 @@
 <h1>Salesforce Formatter Web</h1>
 
-<p>Enter a 15 character Salesforce Campaign ID and receive its 18 character equivalent.</p>
+<p>Enter one or more 15 character Salesforce Campaign IDs, either comma-separated or on separate rows.  We'll generate and display their 18 character equivalents.</p>
 
 <form action="/convert" method="post">
-  <input type="text" name="sfdc_id" autofocus />
+  <textarea name="sfdc_id" rows="10" cols="70" autofocus></textarea>
+  <br/>
   <input type="submit" value="Do It" />
 </form>
 
 <% if @formatted %>
-  <p>Your result: <%= @formatted %></p>
+  <p>Your result:</p>
+  <pre><%= @formatted %></pre>
 <% end %>
