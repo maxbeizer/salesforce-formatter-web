@@ -14,8 +14,16 @@ helpers do
   end
 
   # format a list of tuples
-  def oformat(ids)
+  def format_both(ids)
     ids.inject(""){ |out, idpair| out += "#{idpair[0]} : #{idpair[1]}\n"}
+  end
+
+  def format_just18(ids)
+    ids.inject(""){ |out, idpair| out += "#{idpair[1]}\n"}
+  end
+
+  def format_csv(ids)
+    ids.inject("ID15,ID18\n"){ |out, idpair| out += "#{idpair[0]}, #{idpair[1]}\n"}
   end
 
 end
@@ -32,8 +40,8 @@ post '/convert' do
   puts "GOT #{params[:sfdc_id]}"
   ids = parse(params[:sfdc_id])
 
-  ids.map!{ |id| [id, (Formatter.format_15 id)] }
-  @formatted = oformat(ids)
+  @results = ids.map!{ |id| [id, (Formatter.format_15 id)] }
+
   erb :index
 end
 
