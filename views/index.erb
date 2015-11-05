@@ -3,9 +3,10 @@
 <p>Enter one or more 15 character Salesforce Campaign IDs, either comma-separated or on separate rows.  We'll generate and display their 18 character equivalents.</p>
 
 <form action="/convert" method="post">
-  <textarea name="sfdc_id" rows="10" cols="70" autofocus></textarea>
+  <textarea id="converter-input" name="sfdc_id" rows="10" cols="70" autofocus></textarea>
   <br/>
   <input type="submit" value="Do It" />
+  <small>Pro-tip: <code>&#8984; + enter</code> will submit the form</small>
 </form>
 
 
