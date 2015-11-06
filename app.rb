@@ -37,7 +37,6 @@ get '/' do
 end
 
 post '/convert' do
-  puts "GOT #{params[:sfdc_id]}"
   ids = parse(params[:sfdc_id])
 
   @results = ids.map!{ |id| [id, (Formatter.format_15 id)] }

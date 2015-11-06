@@ -14,39 +14,30 @@
 
 <% if @results %>
 
-<div class="panel panel-default container-fluid">
-   <div class="panel-heading row">
-        <div class="col-xs-4"><h3 class="panel-title">Results</h3></div>
-        <div class="col-xs-8"><button class="btn pull-right zclip">Copy</button></div>
+  <div class="panel panel-default container-fluid">
+    <div class="panel-heading row">
+      <div class="col-xs-4"><h3 class="panel-title">Results</h3></div>
+      <div class="col-xs-8"><button class="btn pull-right zclip">Copy</button></div>
     </div>
-  <div class="panel-body">
-  <div>
-  <!-- Nav tabs -->
- 
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Both</a></li>
-    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Just 18</a></li>
-    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">CSV</a></li>
-  </ul>
 
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">
-      <pre id="result"><%= format_both(@results) %></pre>
-    </div>   
-    <div role="tabpanel" class="tab-pane" id="profile">
-      <pre id="result"><%= format_just18(@results) %></pre>
-    </div>       
-    <div role="tabpanel" class="tab-pane" id="messages">
-      <pre id="result"><%= format_csv(@results) %></pre>
-    </div>       
+    <div class="panel-body">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Both</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Just 18</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">CSV</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+          <pre id="result"><%= format_both(@results) %></pre>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="profile">
+          <pre id="result"><%= format_just18(@results) %></pre>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="messages">
+          <pre id="result"><%= format_csv(@results) %></pre>
+        </div>
+      </div>
     </div>
   </div>
-  </div> <!-- navtabs -->
-  
-  </div> <!-- panel body -->
-</div> <!-- panel -->
-
-
-
 <% end %>
