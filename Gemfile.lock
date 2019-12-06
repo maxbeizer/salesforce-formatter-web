@@ -12,7 +12,7 @@ GEM
       slop (~> 3.0)
     puma (2.0.1)
       rack (>= 1.1, < 2.0)
-    rack (1.5.2)
+    rack (1.6.11)
     rack-protection (1.5.0)
       rack
     salesforce_id_formatter (1.0.0)
